@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+A simple starter template for Web3 dApps using Next.js 15, Wagmi, RainbowKit, and Shadcn for styling. This package helps developers skip the tedious setup and get straight to building!
 
-## Getting Started
+Features
+1. Next.js 15
+2. TailwindCSS & Shadcn for modern UI styling
+3. Wagmi for blockchain interaction
+4. RainbowKit for Web3 wallet connection
 
-First, run the development server:
+Installation and Usage
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+You can quickly scaffold a new Web3 project with:
+    
+    npx create-next-wagmi-shadcn 
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+    cd <project_name>
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+    npm run dev
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Wallet Connection
 
-## Learn More
+RainbowKit is pre-configured for wallet connection. You can find the setup inside app/providers.tsx
 
-To learn more about Next.js, take a look at the following resources:
+UI Components with Shadcn
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Shadcn components are already set up. Add more by using:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+    npx shadcn@latest add <component>
 
-## Deploy on Vercel
+Use them by importing e.g:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+    import { Button } from "@/components/ui/button"
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+For more info visit their documentation at https://ui.shadcn.com/docs/components/button
+
+Configuration
+1. Update your Tailwind config in tailwind.config.ts if you need customization.
+2. Modify RainbowKit settings in providers.tsx to match your project needs.
+3. Add custom UI components using ShadCN.
+
+NOTE: 
+
+Remember to add 'use client' in every component that uses a wagmi hook such as useWriteContract or useReadContract.
+
+This is very important otherwise your app won't work as intended.
+
+Feel free to contribute or report any issues.
+
+Also, kindly star this project on my GitHub if you find it helpful :D
+
+https://github.com/Felista-Njeri/next-wagmi-shadcn
